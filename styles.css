@@ -1426,7 +1426,7 @@ em,
   position: absolute;
   top: 16px;
   left: calc(100% + 10px);
-  width: 38px;
+  width: 46px;
   border-top: 1px dotted rgba(244, 241, 234, 0.75);
 }
 
@@ -1444,7 +1444,7 @@ em,
 .ui-detail-row .detail-note--reviews::after {
   top: 16px;
   left: calc(100% + 10px);
-  width: 38px;
+  width: 46px;
   border-top: 1px dotted rgba(244, 241, 234, 0.75);
 }
 
