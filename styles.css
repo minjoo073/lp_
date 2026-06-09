@@ -205,6 +205,7 @@ ol {
 .section-no {
   font-family: "Archivo", "Arial Black", sans-serif;
   font-size: 3rem;
+  font-weight: 700;
   line-height: 1;
   color: var(--text);
   letter-spacing: -0.05em;
@@ -212,7 +213,8 @@ ol {
 
 .section-title-line h2 {
   font-family: "Archivo", "Arial Black", sans-serif;
-  font-size: clamp(3.15rem, 4vw, 4.65rem);
+  font-size: clamp(3.8rem, 4.5vw, 4.8rem);
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -0.06em;
 }
@@ -275,7 +277,7 @@ em,
 }
 
 .concept-section .label-line {
-  font-size: 0.66rem;
+  font-size: 0.76rem;
 }
 
 .concept-section .essay-block h3 {
@@ -341,8 +343,8 @@ em,
 .small-copy,
 .code-label {
   color: var(--accent);
-  font-size: 0.56rem;
-  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
   font-weight: 500;
 }
 
@@ -607,8 +609,8 @@ em,
 
 .key-insight-block span {
   color: var(--muted);
-  font-size: 0.56rem;
-  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
 }
 
 .section-dark {
@@ -670,13 +672,11 @@ em,
 
 .visual-section .section-no {
   color: var(--dark-text);
-  font-size: 3.4rem;
   font-weight: 700;
 }
 
 .visual-section .section-title-line h2 {
   color: var(--dark-text);
-  font-size: 4.35rem;
   font-weight: 700;
   letter-spacing: -0.06em;
 }
@@ -690,9 +690,8 @@ em,
 
 .visual-section .section-subtitle {
   margin-top: 28px;
-  margin-left: 126px;
+  margin-left: 120px;
   color: #d0c8bd;
-  font-size: 0.94rem;
   font-weight: 400;
 }
 
@@ -927,15 +926,13 @@ em,
 }
 
 .wireframe-section .section-title-line h2 {
-  font-size: 4.25rem;
   font-weight: 700;
   letter-spacing: -0.06em;
 }
 
 .wireframe-section .section-subtitle {
   margin-top: 30px;
-  margin-left: 84px;
-  font-size: 0.94rem;
+  margin-left: 120px;
   color: #9a938a;
 }
 
@@ -1007,7 +1004,6 @@ em,
 }
 
 .section-dark--ui .section-title-line h2 {
-  font-size: 4.1rem;
   font-weight: 700;
   letter-spacing: -0.06em;
 }
@@ -1021,8 +1017,7 @@ em,
 
 .section-dark--ui .section-subtitle {
   margin-top: 30px;
-  margin-left: 84px;
-  font-size: 0.94rem;
+  margin-left: 120px;
 }
 
 .section-dark--ui .section-side {
@@ -1152,7 +1147,7 @@ em,
 .ui-note p {
   color: var(--dark-text);
   margin-top: 16px;
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   line-height: 1.48;
   font-weight: 400;
 }
@@ -2166,4 +2161,25 @@ em,
   .record-visual {
     width: min(92vw, 360px);
   }
+}
+
+/* ─── Scroll animations ──────────────────────────────────────────────────── */
+.will-animate {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.will-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.will-animate-fade {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.will-animate-fade.is-visible {
+  opacity: 1;
 }
