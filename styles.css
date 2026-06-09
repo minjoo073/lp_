@@ -1293,6 +1293,7 @@ em,
   font-size: 0.96rem;
   line-height: 1.5;
   font-weight: 400;
+  white-space: nowrap;
 }
 
 .placeholder--poster {
