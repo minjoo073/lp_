@@ -1352,7 +1352,7 @@ em,
 
 .ui-detail-row {
   display: grid;
-  grid-template-columns: 238px 430px;
+  grid-template-columns: 260px 480px;
   gap: 56px;
   align-items: start;
   justify-content: center;
@@ -1366,7 +1366,7 @@ em,
 }
 
 .detail-display {
-  width: 430px;
+  width: 480px;
 }
 
 .ui-detail-copy {
@@ -1389,17 +1389,17 @@ em,
 }
 
 .ui-image--detail {
-  width: 398px;
+  width: 448px;
 }
 
 .ui-detail-row .detail-note {
   position: relative;
-  width: 238px;
+  width: 260px;
 }
 
 .ui-detail-row .detail-note h4 {
   color: var(--dark-text);
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.12;
@@ -1409,7 +1409,7 @@ em,
   display: block;
   margin-top: 10px;
   color: var(--accent);
-  font-size: 0.92rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.22;
 }
@@ -1417,7 +1417,7 @@ em,
 .ui-detail-row .detail-note p {
   margin-top: 14px;
   color: var(--dark-text);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   line-height: 1.48;
 }
 
