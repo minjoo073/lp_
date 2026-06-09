@@ -1361,7 +1361,7 @@ em,
 
 .detail-notes {
   display: grid;
-  gap: 88px;
+  gap: 70px;
   padding-top: 110px;
 }
 
@@ -1399,7 +1399,7 @@ em,
 
 .ui-detail-row .detail-note h4 {
   color: var(--dark-text);
-  font-size: 1.08rem;
+  font-size: 1.8rem;
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.12;
@@ -1415,7 +1415,7 @@ em,
 }
 
 .ui-detail-row .detail-note p {
-  margin-top: 16px;
+  margin-top: 14px;
   color: var(--dark-text);
   font-size: 0.82rem;
   line-height: 1.48;
@@ -1424,33 +1424,33 @@ em,
 .ui-detail-row .detail-note::after {
   content: "";
   position: absolute;
-  top: 12px;
-  left: calc(100% + 18px);
-  width: 88px;
-  border-top: 1px dotted rgba(244, 241, 234, 0.45);
+  top: 16px;
+  left: calc(100% + 2px);
+  width: 46px;
+  border-top: 1px dotted rgba(244, 241, 234, 0.75);
 }
 
 .ui-detail-row .detail-note::before {
   content: "";
   position: absolute;
-  top: 8px;
-  left: calc(100% + 106px);
+  top: 12px;
+  left: calc(100% + 50px);
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: rgba(244, 241, 234, 0.68);
+  background: rgba(244, 241, 234, 0.9);
 }
 
 .ui-detail-row .detail-note--reviews::after {
-  top: 10px;
-  left: calc(100% + 18px);
-  width: 84px;
-  border-top: 1px dotted rgba(244, 241, 234, 0.45);
+  top: 16px;
+  left: calc(100% + 2px);
+  width: 46px;
+  border-top: 1px dotted rgba(244, 241, 234, 0.75);
 }
 
 .ui-detail-row .detail-note--reviews::before {
-  top: 6px;
-  left: calc(100% + 102px);
+  top: 12px;
+  left: calc(100% + 50px);
 }
 
 .placeholder--screen-tall {
