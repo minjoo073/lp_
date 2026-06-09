@@ -54,7 +54,7 @@ ol {
 
 .brand-mark {
   font-family: "Archivo", "Arial Black", sans-serif;
-  font-size: 0.62rem;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.2em;
 }
@@ -83,14 +83,23 @@ ol {
 .meta-item dt {
   margin-bottom: 6px;
   color: var(--muted);
-  font-size: 18px;
+  font-size: 0.58rem;
   font-weight: 400;
 }
 
 .meta-item dd {
-  font-size: 18px;
+  font-size: 0.62rem;
   font-weight: 500;
   color: #35322f;
+}
+
+.hero .meta-item dt,
+.hero .archive-strip {
+  font-size: 14px;
+}
+
+.hero .meta-item dd {
+  font-size: 14px;
 }
 
 .archive-strip {
@@ -100,7 +109,7 @@ ol {
   margin: 36px 0 30px;
   padding-top: 12px;
   border-top: 1px solid var(--line);
-  font-size: 18px;
+  font-size: 0.54rem;
   letter-spacing: 0.1em;
 }
 
