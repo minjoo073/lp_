@@ -1311,13 +1311,13 @@ em,
 .feature-list {
   grid-area: list;
   display: grid;
-  gap: 80px;
+  gap: 130px;
   padding: 0;
   list-style: none;
   color: var(--dark-text);
   font-size: 0.82rem;
   align-content: start;
-  padding-top: 78px;
+  padding-top: 110px;
 }
 
 .feature-list li {
