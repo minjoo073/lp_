@@ -1558,7 +1558,7 @@ em,
 .about-side-copy::after {
   content: "";
   position: absolute;
-  top: 16px;
+  top: calc(218px + 16px);
   left: -48px;
   width: 37px;
   border-top: 1px dotted rgba(244, 241, 234, 0.75);
@@ -1567,7 +1567,7 @@ em,
 .about-side-copy::before {
   content: "";
   position: absolute;
-  top: 12px;
+  top: calc(218px + 12px);
   left: -10px;
   width: 7px;
   height: 7px;
