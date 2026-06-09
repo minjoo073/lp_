@@ -1262,7 +1262,7 @@ em,
 
 .editorial-row {
   display: grid;
-  grid-template-columns: 400px 420px;
+  grid-template-columns: 560px 420px;
   grid-template-areas:
     "copy list"
     "shot list";
@@ -1352,7 +1352,7 @@ em,
 
 .ui-detail-row {
   display: grid;
-  grid-template-columns: 260px 480px;
+  grid-template-columns: 260px 560px;
   gap: 56px;
   align-items: start;
   justify-content: center;
@@ -1366,7 +1366,7 @@ em,
 }
 
 .detail-display {
-  width: 480px;
+  width: 560px;
 }
 
 .ui-detail-copy {
