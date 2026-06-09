@@ -1255,9 +1255,9 @@ em,
 }
 
 .ui-image--mobile {
-  width: 132px;
+  width: 200px;
   margin-top: 14px;
-  margin-left: 26px;
+  margin-left: 0;
 }
 
 .editorial-row {
