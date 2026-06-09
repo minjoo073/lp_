@@ -1592,14 +1592,14 @@ em,
 }
 
 .publishing-copy .label-line {
-  font-size: 0.78rem;
+  font-size: 0.88rem;
 }
 
 .publishing-intro {
   margin-top: 52px;
   color: var(--dark-text);
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.35rem;
+  line-height: 1.65;
   font-weight: 400;
 }
 
@@ -1608,9 +1608,9 @@ em,
 }
 
 .publishing-copy h3 {
-  margin-top: 54px;
+  margin-top: 60px;
   color: var(--dark-text);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -1618,10 +1618,10 @@ em,
 .publishing-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px 34px;
-  margin-top: 32px;
+  gap: 32px 40px;
+  margin-top: 36px;
   color: var(--dark-text);
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.35;
   font-weight: 400;
 }
