@@ -1591,6 +1591,10 @@ em,
   padding-top: 4px;
 }
 
+.publishing-copy .label-line {
+  font-size: 0.78rem;
+}
+
 .publishing-intro {
   margin-top: 52px;
   color: var(--dark-text);
@@ -1699,7 +1703,7 @@ em,
 .code-comment {
   margin: 0 0 12px;
   color: #7f7a75;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.4;
 }
 
@@ -1707,7 +1711,7 @@ em,
   margin: 0 0 34px;
   color: #f0c48a;
   font-family: "Space Mono", ui-monospace, monospace;
-  font-size: 0.86rem;
+  font-size: 0.96rem;
   line-height: 1.55;
   white-space: pre-wrap;
 }
