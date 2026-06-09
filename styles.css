@@ -1597,14 +1597,15 @@ em,
 
 .publishing-intro {
   margin-top: 52px;
-  color: var(--dark-text);
-  font-size: 1.35rem;
+  color: rgba(244, 241, 234, 0.65);
+  font-size: 20px;
   line-height: 1.65;
   font-weight: 400;
 }
 
 .publishing-intro strong {
   font-weight: 700;
+  color: #ffffff;
 }
 
 .publishing-copy h3 {
