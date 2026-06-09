@@ -2066,15 +2066,15 @@ em,
 .hero-copy h2 {
   margin-top: 86px;
   max-width: 640px;
-  font-size: clamp(1.8rem, 2.5vw, 2.9rem);
-  line-height: 1.18;
+  font-size: clamp(2.4rem, 3.5vw, 4rem);
+  line-height: 1.15;
 }
 
 .hero-copy p {
-  margin-top: 18px;
+  margin-top: 22px;
   max-width: 640px;
-  font-size: 0.86rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.65;
 }
 
 .hero-visual {
