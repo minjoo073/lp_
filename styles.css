@@ -1199,19 +1199,9 @@ em,
   background: rgba(244, 241, 234, 0.9);
 }
 
-.ui-note-column--right .ui-note--featured::before {
-  left: -64px;
-  top: 7px;
-  width: 64px;
-  height: 30px;
-  border-top: 1px dotted rgba(244, 241, 234, 0.75);
-  border-left: 1px dotted rgba(244, 241, 234, 0.75);
-  border-bottom: 1px dotted rgba(244, 241, 234, 0.75);
-}
-
 .ui-note-column--right .ui-note--featured::after {
   left: -34px;
-  top: 33px;
+  top: 5px;
 }
 
 .ui-mobile-block {
@@ -1223,8 +1213,8 @@ em,
   max-width: 196px;
 }
 
-.ui-note--mobile::before,
-.ui-note--mobile::after {
+.ui-note-column--right .ui-note--mobile::before,
+.ui-note-column--right .ui-note--mobile::after {
   content: none;
 }
 
