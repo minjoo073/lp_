@@ -1356,7 +1356,7 @@ em,
   gap: 56px;
   align-items: start;
   justify-content: center;
-  margin-top: 118px;
+  margin-top: 150px;
 }
 
 .detail-notes {
@@ -1425,8 +1425,8 @@ em,
   content: "";
   position: absolute;
   top: 16px;
-  left: calc(100% + 2px);
-  width: 46px;
+  left: calc(100% + 10px);
+  width: 38px;
   border-top: 1px dotted rgba(244, 241, 234, 0.75);
 }
 
@@ -1434,7 +1434,7 @@ em,
   content: "";
   position: absolute;
   top: 12px;
-  left: calc(100% + 50px);
+  left: calc(100% + 2px);
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -1443,14 +1443,14 @@ em,
 
 .ui-detail-row .detail-note--reviews::after {
   top: 16px;
-  left: calc(100% + 2px);
-  width: 46px;
+  left: calc(100% + 10px);
+  width: 38px;
   border-top: 1px dotted rgba(244, 241, 234, 0.75);
 }
 
 .ui-detail-row .detail-note--reviews::before {
   top: 12px;
-  left: calc(100% + 50px);
+  left: calc(100% + 2px);
 }
 
 .placeholder--screen-tall {
