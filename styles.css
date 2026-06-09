@@ -1311,7 +1311,7 @@ em,
 .feature-list {
   grid-area: list;
   display: grid;
-  gap: 130px;
+  gap: 80px;
   padding: 0;
   list-style: none;
   color: var(--dark-text);
@@ -1322,28 +1322,31 @@ em,
 
 .feature-list li {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   align-items: flex-start;
 }
 
 .feature-list span {
-  min-width: 24px;
-  font-size: 1.02rem;
+  min-width: 28px;
+  font-size: 1rem;
   font-weight: 500;
+  padding-top: 6px;
 }
 
 .feature-list strong {
   display: block;
   color: var(--dark-text);
-  font-size: 1.22rem;
+  font-size: 1.8rem;
   font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .feature-list p {
-  margin-top: 12px;
+  margin-top: 14px;
   color: var(--dark-muted);
-  font-size: 0.96rem;
-  line-height: 1.52;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .ui-detail-row {
