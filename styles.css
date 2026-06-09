@@ -1595,7 +1595,7 @@ em,
   font-size: 0.88rem;
 }
 
-.publishing-intro {
+.publishing-copy .publishing-intro {
   margin-top: 52px;
   color: rgba(244, 241, 234, 0.65);
   font-size: 20px;
@@ -1603,7 +1603,7 @@ em,
   font-weight: 400;
 }
 
-.publishing-intro strong {
+.publishing-copy .publishing-intro strong {
   font-weight: 700;
   color: #ffffff;
 }
