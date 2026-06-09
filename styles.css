@@ -83,12 +83,12 @@ ol {
 .meta-item dt {
   margin-bottom: 6px;
   color: var(--muted);
-  font-size: 0.58rem;
+  font-size: 18px;
   font-weight: 400;
 }
 
 .meta-item dd {
-  font-size: 0.62rem;
+  font-size: 18px;
   font-weight: 500;
   color: #35322f;
 }
@@ -100,7 +100,7 @@ ol {
   margin: 36px 0 30px;
   padding-top: 12px;
   border-top: 1px solid var(--line);
-  font-size: 0.54rem;
+  font-size: 18px;
   letter-spacing: 0.1em;
 }
 
@@ -236,7 +236,7 @@ em,
   margin-top: 30px;
   margin-left: 120px;
   color: #9a938a;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
 }
 
