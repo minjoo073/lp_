@@ -1369,8 +1369,8 @@ em,
 
 .detail-notes {
   display: grid;
-  gap: 52px;
-  padding-top: 60px;
+  gap: 0;
+  padding-top: 100px;
 }
 
 .detail-display {
@@ -1405,9 +1405,14 @@ em,
   width: 260px;
 }
 
+.detail-note--ranking  { margin-top: 130px; }
+.detail-note--chart    { margin-top: 150px; }
+.detail-note--collector{ margin-top: 150px; }
+.detail-note--reviews  { margin-top: 120px; }
+
 .ui-detail-row .detail-note h4 {
   color: var(--dark-text);
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.12;
@@ -1415,9 +1420,9 @@ em,
 
 .ui-detail-row .detail-note strong {
   display: block;
-  margin-top: 6px;
+  margin-top: 8px;
   color: var(--accent);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.22;
 }
@@ -1425,7 +1430,7 @@ em,
 .ui-detail-row .detail-note p {
   margin-top: 10px;
   color: var(--dark-text);
-  font-size: 0.92rem;
+  font-size: 1rem;
   line-height: 1.52;
   word-break: keep-all;
   overflow-wrap: break-word;
