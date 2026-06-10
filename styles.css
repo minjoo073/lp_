@@ -1214,11 +1214,15 @@ em,
 
 .ui-mobile-block {
   margin-top: 28px;
-  padding-left: 26px;
+  padding-left: 0;
 }
 
 .ui-note--mobile {
   max-width: 196px;
+}
+
+.ui-note-column--right .ui-note--mobile {
+  padding-left: 0;
 }
 
 .ui-note-column--right .ui-note--mobile::before,
