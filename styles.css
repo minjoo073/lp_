@@ -288,6 +288,7 @@ em,
   letter-spacing: -0.05em;
   font-weight: 700;
   color: #23211f;
+  word-break: keep-all;
 }
 
 .concept-section .essay-block > p:last-child {
@@ -427,6 +428,7 @@ em,
   letter-spacing: -0.05em;
   font-weight: 700;
   color: #23211f;
+  word-break: keep-all;
 }
 
 .research-section .research-copy p {
