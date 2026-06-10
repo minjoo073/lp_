@@ -283,7 +283,7 @@ em,
 .concept-section .essay-block h3 {
   margin-top: 54px;
   max-width: 740px;
-  font-size: clamp(2.2rem, 3vw, 3.5rem);
+  font-size: clamp(1.6rem, 2vw, 2.4rem);
   line-height: 1.28;
   letter-spacing: -0.05em;
   font-weight: 700;
@@ -423,7 +423,7 @@ em,
 
 .research-section .research-copy h3 {
   margin-top: 0;
-  font-size: clamp(2.35rem, 3vw, 3.55rem);
+  font-size: clamp(1.6rem, 2vw, 2.4rem);
   line-height: 1.28;
   letter-spacing: -0.05em;
   font-weight: 700;
