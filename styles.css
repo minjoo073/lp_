@@ -1034,8 +1034,8 @@ em,
 
 .ui-intro-copy h3 {
   margin-top: 0;
-  max-width: 460px;
-  font-size: 2.9rem;
+  max-width: 620px;
+  font-size: 3.4rem;
   line-height: 1.2;
   letter-spacing: -0.05em;
   font-weight: 500;
@@ -1107,7 +1107,7 @@ em,
 
 .ui-main-copy h4 {
   color: var(--accent);
-  font-size: 0.92rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.04em;
 }
@@ -1115,7 +1115,7 @@ em,
 .ui-main-copy p {
   margin-top: 8px;
   color: var(--dark-text);
-  font-size: 1.12rem;
+  font-size: 1.22rem;
   line-height: 1.55;
   font-weight: 400;
 }
@@ -1130,7 +1130,7 @@ em,
 
 .ui-note h4 {
   color: var(--dark-text);
-  font-size: 1.34rem;
+  font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -1140,7 +1140,7 @@ em,
   display: block;
   margin-top: 10px;
   color: var(--accent);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.22;
@@ -1149,7 +1149,7 @@ em,
 .ui-note p {
   color: var(--dark-text);
   margin-top: 16px;
-  font-size: 1.12rem;
+  font-size: 1.22rem;
   line-height: 1.56;
   font-weight: 400;
   word-break: keep-all;
@@ -1290,7 +1290,7 @@ em,
 .ui-section-kicker {
   display: block;
   color: var(--accent);
-  font-size: 0.94rem;
+  font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: 0.04em;
 }
@@ -1298,7 +1298,7 @@ em,
 .editorial-copy p {
   margin-top: 10px;
   color: var(--dark-text);
-  font-size: 1.08rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   font-weight: 400;
   white-space: nowrap;
@@ -1345,7 +1345,7 @@ em,
 .feature-list strong {
   display: block;
   color: var(--dark-text);
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -1354,7 +1354,7 @@ em,
 .feature-list p {
   margin-top: 14px;
   color: var(--dark-muted);
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.55;
 }
 
@@ -1383,7 +1383,7 @@ em,
 
 .ui-detail-copy h4 {
   color: var(--accent);
-  font-size: 0.92rem;
+  font-size: 1.02rem;
   font-weight: 500;
   letter-spacing: 0.04em;
 }
@@ -1391,7 +1391,7 @@ em,
 .ui-detail-copy p {
   margin-top: 8px;
   color: var(--dark-text);
-  font-size: 1.06rem;
+  font-size: 1.18rem;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -1407,7 +1407,7 @@ em,
 
 .ui-detail-row .detail-note h4 {
   color: var(--dark-text);
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.12;
@@ -1417,7 +1417,7 @@ em,
   display: block;
   margin-top: 10px;
   color: var(--accent);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.22;
 }
@@ -1425,7 +1425,7 @@ em,
 .ui-detail-row .detail-note p {
   margin-top: 14px;
   color: var(--dark-text);
-  font-size: 1.06rem;
+  font-size: 1.15rem;
   line-height: 1.52;
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -1501,7 +1501,7 @@ em,
 
 .ui-about-copy h4 {
   color: var(--accent);
-  font-size: 0.92rem;
+  font-size: 1.02rem;
   font-weight: 500;
   letter-spacing: 0.04em;
 }
@@ -1509,7 +1509,7 @@ em,
 .ui-about-copy p {
   margin-top: 8px;
   color: var(--dark-text);
-  font-size: 1.06rem;
+  font-size: 1.18rem;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -1526,7 +1526,7 @@ em,
 .about-note h4,
 .about-side-copy h4 {
   color: var(--dark-text);
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.12;
@@ -1536,7 +1536,7 @@ em,
 .about-side-copy p {
   margin-top: 14px;
   color: var(--dark-text);
-  font-size: 1rem;
+  font-size: 1.12rem;
   line-height: 1.48;
   word-break: keep-all;
   overflow-wrap: break-word;
