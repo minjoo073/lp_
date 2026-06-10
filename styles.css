@@ -1151,6 +1151,8 @@ em,
   font-size: 1.12rem;
   line-height: 1.56;
   font-weight: 400;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .ui-note,
@@ -1424,6 +1426,8 @@ em,
   color: var(--dark-text);
   font-size: 0.96rem;
   line-height: 1.52;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .ui-detail-row .detail-note::after {
@@ -1533,6 +1537,8 @@ em,
   color: var(--dark-text);
   font-size: 0.88rem;
   line-height: 1.48;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .about-note::after {
