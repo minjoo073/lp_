@@ -1369,8 +1369,8 @@ em,
 
 .detail-notes {
   display: grid;
-  gap: 120px;
-  padding-top: 110px;
+  gap: 52px;
+  padding-top: 60px;
 }
 
 .detail-display {
@@ -1407,7 +1407,7 @@ em,
 
 .ui-detail-row .detail-note h4 {
   color: var(--dark-text);
-  font-size: 2.5rem;
+  font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.12;
@@ -1415,17 +1415,17 @@ em,
 
 .ui-detail-row .detail-note strong {
   display: block;
-  margin-top: 10px;
+  margin-top: 6px;
   color: var(--accent);
-  font-size: 1.2rem;
+  font-size: 0.88rem;
   font-weight: 500;
   line-height: 1.22;
 }
 
 .ui-detail-row .detail-note p {
-  margin-top: 14px;
+  margin-top: 10px;
   color: var(--dark-text);
-  font-size: 1.2rem;
+  font-size: 0.92rem;
   line-height: 1.52;
   word-break: keep-all;
   overflow-wrap: break-word;
