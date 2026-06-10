@@ -1045,7 +1045,7 @@ em,
 .ui-hero-mockup {
   display: flex;
   justify-content: center;
-  margin-top: 44px;
+  margin-top: 90px;
 }
 
 .placeholder--laptop {
@@ -1071,7 +1071,7 @@ em,
   gap: 30px;
   align-items: start;
   justify-content: center;
-  margin-top: 150px;
+  margin-top: 210px;
 }
 
 .ui-note-column {
@@ -1115,7 +1115,7 @@ em,
 .ui-main-copy p {
   margin-top: 8px;
   color: var(--dark-text);
-  font-size: 1.22rem;
+  font-size: 1.2rem;
   line-height: 1.55;
   font-weight: 400;
 }
@@ -1149,7 +1149,7 @@ em,
 .ui-note p {
   color: var(--dark-text);
   margin-top: 16px;
-  font-size: 1.22rem;
+  font-size: 1.2rem;
   line-height: 1.56;
   font-weight: 400;
   word-break: keep-all;
@@ -1277,7 +1277,7 @@ em,
   column-gap: 108px;
   row-gap: 24px;
   align-items: start;
-  margin-top: 112px;
+  margin-top: 200px;
   justify-content: start;
   margin-left: -22px;
 }
@@ -1364,7 +1364,7 @@ em,
   gap: 56px;
   align-items: start;
   justify-content: center;
-  margin-top: 150px;
+  margin-top: 210px;
 }
 
 .detail-notes {
@@ -1391,7 +1391,7 @@ em,
 .ui-detail-copy p {
   margin-top: 8px;
   color: var(--dark-text);
-  font-size: 1.18rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -1425,7 +1425,7 @@ em,
 .ui-detail-row .detail-note p {
   margin-top: 14px;
   color: var(--dark-text);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.52;
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -1509,7 +1509,7 @@ em,
 .ui-about-copy p {
   margin-top: 8px;
   color: var(--dark-text);
-  font-size: 1.18rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -1536,7 +1536,7 @@ em,
 .about-side-copy p {
   margin-top: 14px;
   color: var(--dark-text);
-  font-size: 1.12rem;
+  font-size: 1.2rem;
   line-height: 1.48;
   word-break: keep-all;
   overflow-wrap: break-word;
