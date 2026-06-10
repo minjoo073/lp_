@@ -1320,13 +1320,13 @@ em,
 .feature-list {
   grid-area: list;
   display: grid;
-  gap: 130px;
+  gap: 170px;
   padding: 0;
   list-style: none;
   color: var(--dark-text);
   font-size: 0.82rem;
   align-content: start;
-  padding-top: 110px;
+  padding-top: 130px;
 }
 
 .feature-list li {
@@ -1369,7 +1369,7 @@ em,
 
 .detail-notes {
   display: grid;
-  gap: 70px;
+  gap: 120px;
   padding-top: 110px;
 }
 
