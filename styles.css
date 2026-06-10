@@ -9,7 +9,7 @@
   --dark-text: #f4f1ea;
   --dark-muted: #b7afa4;
   --dark-line: rgba(244, 241, 234, 0.14);
-  --page-margin: 80px;
+  --page-margin: 64px;
   --desktop-frame: 1440px;
   --container: calc(100vw - (var(--page-margin) * 2));
 }
@@ -83,12 +83,12 @@ ol {
 .meta-item dt {
   margin-bottom: 6px;
   color: var(--muted);
-  font-size: 0.58rem;
+  font-size: 0.72rem;
   font-weight: 400;
 }
 
 .meta-item dd {
-  font-size: 0.62rem;
+  font-size: 0.76rem;
   font-weight: 500;
   color: #35322f;
 }
@@ -109,7 +109,7 @@ ol {
   margin: 36px 0 30px;
   padding-top: 12px;
   border-top: 1px solid var(--line);
-  font-size: 0.54rem;
+  font-size: 0.72rem;
   letter-spacing: 0.1em;
 }
 
@@ -136,7 +136,7 @@ ol {
 
 .hero-copy h2 {
   margin-top: 22px;
-  font-size: clamp(1.22rem, 1.8vw, 2rem);
+  font-size: clamp(1.4rem, 2vw, 2.2rem);
   line-height: 1.2;
   letter-spacing: -0.03em;
 }
@@ -145,7 +145,7 @@ ol {
   margin-top: 14px;
   max-width: 36ch;
   color: var(--muted);
-  font-size: 0.64rem;
+  font-size: 0.9rem;
   line-height: 1.7;
 }
 
@@ -213,7 +213,7 @@ ol {
 
 .section-title-line h2 {
   font-family: "Archivo", "Arial Black", sans-serif;
-  font-size: clamp(3.8rem, 4.5vw, 4.8rem);
+  font-size: clamp(4rem, 4.8vw, 5.2rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.06em;
@@ -247,7 +247,7 @@ em,
   margin-top: 30px;
   margin-left: 120px;
   color: #9a938a;
-  font-size: 16px;
+  font-size: 1.02rem;
   font-weight: 400;
 }
 
@@ -256,7 +256,7 @@ em,
   right: 0;
   top: 70px;
   color: #9a938a;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.35;
   text-align: left;
   white-space: nowrap;
@@ -283,7 +283,7 @@ em,
 .concept-section .essay-block h3 {
   margin-top: 54px;
   max-width: 740px;
-  font-size: clamp(1.6rem, 2vw, 2.4rem);
+  font-size: clamp(1.9rem, 2.3vw, 2.8rem);
   line-height: 1.28;
   letter-spacing: -0.05em;
   font-weight: 700;
@@ -294,8 +294,8 @@ em,
 .concept-section .essay-block > p:last-child {
   margin-top: 34px;
   max-width: 720px;
-  font-size: 0.92rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.65;
   color: #4b4743;
   font-weight: 400;
 }
@@ -332,8 +332,8 @@ em,
 }
 
 .concept-section .pillars-list p {
-  font-size: 0.92rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.55;
   color: #6b655d;
   font-weight: 400;
 }
@@ -344,7 +344,7 @@ em,
 .small-copy,
 .code-label {
   color: var(--accent);
-  font-size: 0.76rem;
+  font-size: 0.84rem;
   letter-spacing: 0.06em;
   font-weight: 500;
 }
@@ -358,7 +358,7 @@ em,
 .research-copy h3,
 .ui-intro-copy h3 {
   margin-top: 18px;
-  font-size: clamp(1.9rem, 2.3vw, 2.7rem);
+  font-size: clamp(2rem, 2.6vw, 3rem);
   line-height: 1.25;
   letter-spacing: -0.04em;
 }
@@ -374,8 +374,8 @@ em,
 .closing-copy-sub {
   margin-top: 14px;
   color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.7;
+  font-size: 1.02rem;
+  line-height: 1.72;
 }
 
 .pillars-list {
@@ -409,7 +409,7 @@ em,
 
 .pillars-list p {
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 0.96rem;
 }
 
 .research-copy {
@@ -423,7 +423,7 @@ em,
 
 .research-section .research-copy h3 {
   margin-top: 0;
-  font-size: clamp(1.6rem, 2vw, 2.4rem);
+  font-size: clamp(1.9rem, 2.3vw, 2.8rem);
   line-height: 1.28;
   letter-spacing: -0.05em;
   font-weight: 700;
@@ -433,8 +433,8 @@ em,
 
 .research-section .research-copy p {
   margin-top: 0;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.65;
   color: #4b4743;
   font-weight: 400;
 }
@@ -760,14 +760,11 @@ em,
 
 .visual-section .type-grid {
   grid-template-columns: 188px 1fr;
-  gap: 66px;
+  gap: 48px 66px;
   margin-top: 46px;
   padding-top: 46px;
   border-top: 1px solid rgba(244, 241, 234, 0.18);
-}
-
-.visual-section .type-meta {
-  gap: 64px;
+  align-items: start;
 }
 
 .visual-section .type-meta dt {
@@ -790,31 +787,31 @@ em,
   font-weight: 400;
 }
 
-.visual-section .type-showcase h3 {
+.visual-section h3.type-showcase {
   font-size: 3.65rem;
   font-weight: 700;
   color: #fff;
+  letter-spacing: -0.05em;
+  line-height: 1;
 }
 
 .visual-section .type-large {
-  margin-top: 78px;
   font-size: 1.38rem;
   font-weight: 400;
   color: #f4f1ea !important;
 }
 
-.visual-section .type-showcase p:nth-of-type(2) {
-  margin-top: 86px;
+.visual-section p.type-showcase {
   color: #f4f1ea;
   font-size: 1.08rem;
   font-weight: 400;
+  margin: 0;
 }
 
 .visual-section .type-code {
-  margin-top: 98px;
   color: #f4f1ea;
-  font-family: "Pretendard", "Noto Sans KR", sans-serif;
-  font-size: 1.02rem;
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 0.96rem;
   font-weight: 400;
 }
 
@@ -865,13 +862,13 @@ em,
 .type-grid {
   display: grid;
   grid-template-columns: 270px 1fr;
-  gap: 54px;
+  gap: 40px 54px;
   margin-top: 16px;
+  align-items: start;
 }
 
 .type-meta {
-  display: grid;
-  gap: 22px;
+  /* individual dl in grid row */
 }
 
 .type-meta dt,
@@ -983,8 +980,8 @@ em,
 .wire-card p {
   margin-top: 18px;
   color: #706961;
-  font-size: 0.96rem;
-  line-height: 1.58;
+  font-size: 1.02rem;
+  line-height: 1.6;
   font-weight: 400;
 }
 
@@ -1132,7 +1129,7 @@ em,
 
 .ui-note h4 {
   color: var(--dark-text);
-  font-size: 1.18rem;
+  font-size: 1.24rem;
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -1151,8 +1148,8 @@ em,
 .ui-note p {
   color: var(--dark-text);
   margin-top: 16px;
-  font-size: 1rem;
-  line-height: 1.52;
+  font-size: 1.05rem;
+  line-height: 1.56;
   font-weight: 400;
 }
 
@@ -1808,7 +1805,7 @@ em,
 
 @media (max-width: 1279px) {
   :root {
-    --page-margin: 48px;
+    --page-margin: 36px;
   }
 
   .hero-grid,
@@ -1926,7 +1923,7 @@ em,
 
   .concept-section .essay-block > p:last-child,
   .concept-section .pillars-list p {
-    font-size: 0.92rem;
+    font-size: 1.1rem;
   }
 
   .research-section .research-copy {
@@ -1942,7 +1939,7 @@ em,
 
   .research-section .research-copy p,
   .audit-row {
-    font-size: 0.96rem;
+    font-size: 1.1rem;
   }
 
   .research-section .issue-grid {
@@ -2164,6 +2161,29 @@ em,
 
   .record-visual {
     width: min(92vw, 360px);
+  }
+}
+
+/* ─── Large screen (1440px+) ─────────────────────────────────────────────── */
+@media (min-width: 1440px) {
+  :root {
+    --desktop-frame: min(calc(100vw - 160px), 1600px);
+  }
+
+  /* Hero: record가 1920px에서 너무 커져 텍스트 가리는 문제 방지 */
+  .record-visual {
+    width: min(38vw, 660px);
+  }
+
+  /* 섹션 타이틀 vw 스케일 상한 조정 */
+  .section-title-line h2 {
+    font-size: clamp(3.8rem, 4vw, 5.2rem);
+  }
+
+  /* h3 제목 상한 조정 */
+  .concept-section .essay-block h3,
+  .research-section .research-copy h3 {
+    font-size: clamp(1.8rem, 2vw, 2.6rem);
   }
 }
 
