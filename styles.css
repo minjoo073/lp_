@@ -632,6 +632,7 @@ em,
 }
 
 .section-head--dark .section-title-line h2,
+.section-head--dark .section-title-line .section-no,
 .section-head--dark .section-subtitle,
 .section-head--dark .section-side,
 .section-dark .minor-label,
@@ -1003,6 +1004,7 @@ em,
 .section-dark--ui .section-no {
   font-size: 3rem;
   font-weight: 700;
+  color: var(--dark-text);
 }
 
 .section-dark--ui .section-title-line h2 {
