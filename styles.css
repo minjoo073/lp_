@@ -65,7 +65,7 @@ ol {
 }
 
 .hero {
-  padding-top: 12px;
+  padding-top: 22px;
   padding-bottom: 250px;
 }
 
@@ -661,7 +661,7 @@ em,
 }
 
 .visual-section .dark-inner {
-  min-height: 1336px;
+  min-height: auto;
 }
 
 .visual-section .section-head {
@@ -753,14 +753,14 @@ em,
 }
 
 .visual-section .system-block--type {
-  margin-top: 84px;
+  margin-top: 140px;
   padding-top: 0;
   border-top: 0;
 }
 
 .visual-section .type-grid {
-  grid-template-columns: 188px 1fr;
-  gap: 48px 66px;
+  grid-template-columns: 188px 1fr 188px 1fr;
+  gap: 56px 48px;
   margin-top: 46px;
   padding-top: 46px;
   border-top: 1px solid rgba(244, 241, 234, 0.18);
@@ -803,9 +803,10 @@ em,
 
 .visual-section p.type-showcase {
   color: #f4f1ea;
-  font-size: 1.08rem;
+  font-size: 0.88rem;
   font-weight: 400;
   margin: 0;
+  white-space: nowrap;
 }
 
 .visual-section .type-code {
@@ -980,7 +981,7 @@ em,
 .wire-card p {
   margin-top: 18px;
   color: #706961;
-  font-size: 1.1rem;
+  font-size: 0.88rem;
   line-height: 1.6;
   font-weight: 400;
 }
@@ -1035,11 +1036,15 @@ em,
 .ui-intro-copy h3 {
   margin-top: 0;
   max-width: 620px;
-  font-size: 3.4rem;
+  font-size: clamp(2.1rem, 2.5vw, 3rem);
   line-height: 1.2;
   letter-spacing: -0.05em;
   font-weight: 500;
   word-break: keep-all;
+}
+
+.ui-intro-copy h3 em {
+  font-size: 1.17em;
 }
 
 .ui-hero-mockup {
@@ -1092,6 +1097,7 @@ em,
   margin-top: 519px;
 }
 
+
 .ui-note-column--right {
   padding-top: 560px;
   gap: 168px;
@@ -1130,17 +1136,18 @@ em,
 
 .ui-note h4 {
   color: var(--dark-text);
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.7rem;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
+
 .ui-note-sub {
   display: block;
-  margin-top: 10px;
+  margin-top: 8px;
   color: var(--accent);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.22;
@@ -1148,10 +1155,10 @@ em,
 
 .ui-note p {
   color: var(--dark-text);
-  margin-top: 16px;
-  font-size: 1.2rem;
-  line-height: 1.56;
-  font-weight: 400;
+  margin-top: 10px;
+  font-size: 0.88rem;
+  line-height: 1.52;
+  font-weight: 300;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -1215,10 +1222,15 @@ em,
 .ui-mobile-block {
   margin-top: 28px;
   padding-left: 0;
+  margin-left: 60px;
 }
 
 .ui-note--mobile {
   max-width: 196px;
+}
+
+.ui-note--mobile h4 {
+  font-size: 1.1rem;
 }
 
 .ui-note-column--right .ui-note--mobile {
@@ -1434,8 +1446,9 @@ em,
 .ui-detail-row .detail-note p {
   margin-top: 10px;
   color: var(--dark-text);
-  font-size: 1rem;
+  font-size: 0.88rem;
   line-height: 1.52;
+  font-weight: 300;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -1535,18 +1548,29 @@ em,
 .about-note h4,
 .about-side-copy h4 {
   color: var(--dark-text);
-  font-size: 2.5rem;
+  font-size: 1.7rem;
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.12;
 }
 
+.about-note strong,
+.about-side-copy strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.22;
+}
+
 .about-note p,
 .about-side-copy p {
-  margin-top: 14px;
+  margin-top: 10px;
   color: var(--dark-text);
-  font-size: 1.2rem;
-  line-height: 1.48;
+  font-size: 0.88rem;
+  line-height: 1.52;
+  font-weight: 300;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -2046,7 +2070,7 @@ em,
 
 /* Hero refinement based on provided section reference */
 .archive-strip {
-  margin: 56px 0 44px;
+  margin: 40px 0 16px;
   padding-top: 0;
   border-top: none;
 }
@@ -2065,7 +2089,7 @@ em,
 .hero-grid {
   grid-template-columns: 1fr;
   position: relative;
-  min-height: 680px;
+  min-height: 760px;
 }
 
 .hero-copy h1 {
@@ -2092,28 +2116,29 @@ em,
 .hero-visual {
   position: absolute;
   right: -98px;
-  bottom: -12px;
+  bottom: 0;
   z-index: 1;
 }
 
 .record-visual {
   display: block;
   position: relative;
-  width: min(43vw, 720px);
+  width: min(63vw, 1020px);
   aspect-ratio: 1;
   object-fit: contain;
+  object-position: center bottom;
   filter: drop-shadow(-14px 24px 50px rgba(0, 0, 0, 0.18));
 }
 
 .meta-grid--bottom {
-  margin-top: 30px;
+  margin-top: 0;
   padding-top: 22px;
   border-top: 1px solid var(--line);
 }
 
 @media (max-width: 1279px) {
   .hero-grid {
-    min-height: 760px;
+    min-height: 900px;
   }
 
   .hero-visual {
@@ -2122,7 +2147,7 @@ em,
   }
 
   .record-visual {
-    width: min(54vw, 620px);
+    width: min(64vw, 740px);
   }
 }
 
@@ -2188,7 +2213,7 @@ em,
 
   /* Hero: record가 1920px에서 너무 커져 텍스트 가리는 문제 방지 */
   .record-visual {
-    width: min(38vw, 660px);
+    width: min(52vw, 1000px);
   }
 
   /* 섹션 타이틀 vw 스케일 상한 조정 */
@@ -2198,7 +2223,8 @@ em,
 
   /* h3 제목 상한 조정 */
   .concept-section .essay-block h3,
-  .research-section .research-copy h3 {
+  .research-section .research-copy h3,
+  .ui-intro-copy h3 {
     font-size: clamp(2rem, 2.2vw, 2.8rem);
   }
 }
