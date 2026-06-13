@@ -1517,7 +1517,7 @@ em,
   gap: clamp(28px, 3.5vw, 48px);
   align-items: start;
   justify-content: center;
-  margin-top: 200px;
+  margin-top: 120px;
 }
 
 .about-notes {
@@ -1627,7 +1627,7 @@ em,
 }
 
 .section-dark--closing {
-  padding-top: clamp(120px, 22vw, 350px);
+  padding-top: clamp(120px, 12vw, 180px);
   padding-bottom: 72px;
 }
 
@@ -1796,9 +1796,9 @@ em,
 }
 
 .closing-footer h2 {
-  margin-top: 90px;
+  margin-top: 32px;
   color: var(--dark-text);
-  font-size: clamp(4.8rem, 7vw, 6.4rem);
+  font-size: clamp(3.6rem, 6vw, 5.6rem);
   line-height: 0.96;
   letter-spacing: -0.07em;
   font-weight: 700;
@@ -1816,7 +1816,7 @@ em,
 .closing-copy {
   margin-top: 54px;
   color: var(--dark-text);
-  font-size: 1.08rem;
+  font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -1825,9 +1825,9 @@ em,
   margin-top: 18px;
   max-width: 64ch;
   color: var(--dark-text);
-  font-size: 0.94rem;
-  line-height: 1.55;
-  font-weight: 400;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  font-weight: 300;
 }
 
 .meta-grid--footer {
@@ -2151,6 +2151,17 @@ em,
   z-index: 2;
 }
 
+.hero-copy h1 .section-dot {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-left: 24px;
+  border-radius: 50%;
+  vertical-align: baseline;
+  position: relative;
+  z-index: 3;
+}
+
 .hero-copy h2 {
   margin-top: 86px;
   max-width: 640px;
@@ -2276,4 +2287,49 @@ em,
 
 .will-animate-fade.is-visible {
   opacity: 1;
+}
+
+/* ─── Effect 3: SplitText char-reveal ───────────────────────────────────── */
+.section-title-line h2 {
+  overflow: hidden; /* 마스킹: 아래에서 올라오는 char가 잘려야 함 */
+}
+
+.char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* 공백 char는 너비 유지 */
+.char--space {
+  display: inline-block;
+  width: 0.28em;
+}
+
+/* ─── Effect 4: Closing wordmark pin+scale ──────────────────────────────── */
+/* GSAP pin 중 레이아웃 점프 방지 */
+.closing-footer h2 {
+  transform-origin: left center;
+  will-change: transform, opacity;
+}
+
+/* ─── Effect 5: Typewriter 타이핑 커서 ──────────────────────────────────── */
+.code-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--dark-text);
+  vertical-align: text-bottom;
+  margin-left: 1px;
+  animation: cursor-blink 0.8s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* 타이핑 완료 후 커서 숨김 */
+.code-cursor.is-done {
+  animation: none;
+  opacity: 0;
 }
