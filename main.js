@@ -361,14 +361,11 @@ setupProgressiveReveal(
      pin은 .closing-footer를 trigger로, 워드마크 엘리먼트를 pin 대상으로 함.
      end '+=300' — 짧은 스크럽 범위로 과도한 fade-out 속도 방지. */
 
-  /* 초기 상태 — 자연 위치, scale 1 */
-  gsap.set(wordmark, { opacity: 1, scale: 1, y: 0 });
+  /* 초기 상태 */
+  gsap.set(wordmark, { opacity: 1, scale: 1, y: 0, color: '#f4f1ea' });
 
-  /* 깔끔한 버전: pin + scale만 변화 (y translate 없음)
-     - 자연 위치 유지 (라벨 안 가림)
-     - end: '+=180' — pin 공간 짧게 (섹션 크기 증가 최소화)
-     - scrub: scale 1 → 1.55 (작은 사이즈에서 큰 사이즈로 커짐) */
-  const tl = gsap.timeline({
+  /* Pin + scale: 짧은 범위(+=180)에서 빠르게 1 → 1.55 */
+  const scaleTl = gsap.timeline({
     scrollTrigger: {
       trigger: footer,
       start: 'top 55%',
@@ -379,10 +376,67 @@ setupProgressiveReveal(
     },
   });
 
-  tl.to(wordmark, {
+  scaleTl.to(wordmark, {
     scale: 1.55,
     duration: 1,
     ease: 'power1.inOut',
+  });
+
+  /* 색상 전환: 페이지 최대 스크롤(약 15827) 안에서 풀 레드 도달
+     - start: 'top 65%' — cream 한참 유지
+     - end: 'top 25%' — footer top이 뷰포트 25% 도달 시 풀 레드
+       (페이지 max scroll로 도달 가능한 범위 내)
+     - 범위 약 360px */
+  gsap.to(wordmark, {
+    color: '#d11f26',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: footer,
+      start: 'top 65%',
+      end: 'top 25%',
+      scrub: 1,
+    },
+    immediateRender: false,
+  });
+})();
+
+/* ─── Effect 7: Closing copy-sub typewriter ───────────────────────────────
+   .closing-copy-sub 텍스트를 한 글자씩 타이핑 효과
+   ScrollTrigger onEnter에서 1회 발동, 마무리 무게감 강화 */
+(function initClosingCopyTypewriter() {
+  if (prefersReducedMotion) return;
+
+  const sub = document.querySelector('.closing-copy-sub');
+  if (!sub) return;
+
+  const originalText = sub.textContent.trim();
+  let isPlayed = false;
+  let isTyping = false;
+
+  function startTyping() {
+    if (isTyping || isPlayed) return;
+    isTyping = true;
+    isPlayed = true;
+
+    sub.textContent = '';
+    sub.style.minHeight = sub.getBoundingClientRect().height + 'px';
+
+    const CHAR_DELAY = 35; /* ms/char — 한국어라 약간 천천히 */
+    Array.from(originalText).forEach((ch, i) => {
+      setTimeout(() => {
+        sub.textContent += ch;
+      }, i * CHAR_DELAY);
+    });
+
+    setTimeout(() => {
+      isTyping = false;
+    }, originalText.length * CHAR_DELAY + 100);
+  }
+
+  ScrollTrigger.create({
+    trigger: sub,
+    start: 'top 85%',
+    onEnter: startTyping,
   });
 })();
 
