@@ -233,34 +233,30 @@ setupProgressiveReveal(
    모두 prefersReducedMotion 가드 적용
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ─── Effect 1: 히어로 레코드 마우스 패럴랙스 ─────────────────────────────
-   조건: hover 가능 환경(포인터 마우스)에서만 활성화
-   방식: gsap.quickTo로 lag 있는 부드러운 추적
-   충돌 방지: .record-visual은 will-animate-fade → is-visible 완료 후
-              GSAP transform 적용 (load 이벤트 이후 바인딩)
+/* ─── Effect 1: 히어로 LP 3D 마우스 틸트 ──────────────────────────────────
+   2D 패럴랙스(x/y 이동) 대신 3D 틸트(rotateX/rotateY).
+   마우스 위치에 따라 LP가 X/Y 축으로 기울어짐 — 실물 LP를 손에 든 느낌.
+   조건: hover 가능 환경 + prefers-reduced-motion 미설정
    ─────────────────────────────────────────────────────────────────────── */
-(function initRecordParallax() {
+(function initRecordTilt() {
   if (prefersReducedMotion) return;
   if (!window.matchMedia('(hover: hover)').matches) return;
 
-  const record = document.querySelector('.record-visual');
-  if (!record) return;
+  const heroVisual = document.querySelector('.hero-visual');
+  if (!heroVisual) return;
 
-  const RANGE = 20; /* ±20px */
+  const TILT_RANGE = 12; /* ±12도 */
 
-  /* quickTo 인스턴스 — lagRatio: 관성 */
-  const moveX = gsap.quickTo(record, 'x', { duration: 0.6, ease: 'power2.out' });
-  const moveY = gsap.quickTo(record, 'y', { duration: 0.6, ease: 'power2.out' });
+  const rotX = gsap.quickTo(heroVisual, 'rotateX', { duration: 0.7, ease: 'power2.out' });
+  const rotY = gsap.quickTo(heroVisual, 'rotateY', { duration: 0.7, ease: 'power2.out' });
 
   function onMouseMove(e) {
-    /* 뷰포트 중심 대비 정규화 (-1 ~ +1) */
     const nx = (e.clientX / window.innerWidth  - 0.5) * 2;
     const ny = (e.clientY / window.innerHeight - 0.5) * 2;
-    moveX(nx * RANGE);
-    moveY(ny * RANGE);
+    rotY(nx * TILT_RANGE);
+    rotX(-ny * TILT_RANGE);
   }
 
-  /* is-visible 부여 완료 후 리스너 등록 (load 이후 최소 500ms 여유) */
   window.addEventListener('load', () => {
     setTimeout(() => {
       window.addEventListener('mousemove', onMouseMove, { passive: true });
