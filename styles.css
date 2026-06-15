@@ -248,7 +248,7 @@ em,
   margin-top: 30px;
   margin-left: 120px;
   color: #9a938a;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -997,7 +997,7 @@ em,
 .wire-card p {
   margin-top: 18px;
   color: #706961;
-  font-size: 0.84rem;
+  font-size: 1rem;
   line-height: 1.62;
   font-weight: 300;
 }
@@ -1137,7 +1137,7 @@ em,
 
 .ui-main-copy h4 {
   color: var(--accent);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.04em;
 }
@@ -1145,7 +1145,7 @@ em,
 .ui-main-copy p {
   margin-top: 18px;
   color: var(--dark-muted);
-  font-size: 0.88rem;
+  font-size: 1.02rem;
   line-height: 1.6;
   font-weight: 300;
 }
@@ -1160,7 +1160,7 @@ em,
 
 .ui-note h4 {
   color: var(--dark-text);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -1170,7 +1170,7 @@ em,
   display: block;
   margin-top: 10px;
   color: var(--accent);
-  font-size: 0.92rem;
+  font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.22;
@@ -1179,7 +1179,7 @@ em,
 .ui-note p {
   color: var(--dark-muted);
   margin-top: 26px;
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.6;
   font-weight: 300;
 }
@@ -1312,6 +1312,10 @@ em,
   row-gap: 24px;
   align-items: start;
   margin-top: 112px;
+  /* 느려진 등장 + 넓어진 챕터 간격 동안에도 sticky 목록이 끝까지(05까지) 따라오도록
+     섹션 하단에 충분한 여유 높이를 확보해 고정(컨테이닝 블록) 구간을 늘린다.
+     이 값이 부족하면 05가 등장하기 전에 고정이 풀려 05가 더 빨리 사라지는 듯 보인다. */
+  padding-bottom: clamp(400px, 44vh, 600px);
   justify-content: start;
   margin-left: -22px;
 }
@@ -1324,7 +1328,7 @@ em,
 .ui-section-kicker {
   display: block;
   color: var(--accent);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.04em;
 }
@@ -1332,7 +1336,7 @@ em,
 .editorial-copy p {
   margin-top: 18px;
   color: var(--dark-muted);
-  font-size: 0.88rem;
+  font-size: 1.02rem;
   line-height: 1.6;
   font-weight: 300;
 }
@@ -1352,9 +1356,15 @@ em,
 
 .feature-list {
   grid-area: list;
+  /* 이미지가 스크롤되는 동안 설명 목록이 뷰포트에 고정되어 '따라오도록' sticky 처리.
+     editorial-row(긴 이미지 포함)가 containing block이라 이미지 구간 내내 붙어 있다가
+     섹션을 벗어나면 자연스럽게 함께 빠져나간다. */
+  align-self: start;
+  position: sticky;
+  top: clamp(120px, 14vh, 176px);
   display: flex;
   flex-direction: column;
-  gap: 350px;
+  gap: clamp(52px, 7.5vh, 92px);
   padding: 0;
   list-style: none;
   color: var(--dark-text);
@@ -1397,8 +1407,8 @@ em,
 .feature-list p {
   margin-top: 14px;
   color: var(--dark-muted);
-  font-size: 0.9rem;
-  line-height: 1.55;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .ui-detail-row {
@@ -1432,7 +1442,7 @@ em,
 
 .ui-detail-copy h4 {
   color: var(--accent);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.04em;
 }
@@ -1440,7 +1450,7 @@ em,
 .ui-detail-copy p {
   margin-top: 18px;
   color: var(--dark-muted);
-  font-size: 0.88rem;
+  font-size: 1.02rem;
   line-height: 1.6;
   font-weight: 300;
 }
@@ -1465,7 +1475,7 @@ em,
 
 .ui-detail-row .detail-note h4 {
   color: var(--dark-text);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -1475,7 +1485,7 @@ em,
   display: block;
   margin-top: 10px;
   color: var(--accent);
-  font-size: 0.92rem;
+  font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.22;
@@ -1484,7 +1494,7 @@ em,
 .ui-detail-row .detail-note p {
   margin-top: 26px;
   color: var(--dark-muted);
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.6;
   font-weight: 300;
 }
@@ -1564,7 +1574,7 @@ em,
 
 .ui-about-copy h4 {
   color: var(--accent);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.04em;
 }
@@ -1572,7 +1582,7 @@ em,
 .ui-about-copy p {
   margin-top: 18px;
   color: var(--dark-muted);
-  font-size: 0.88rem;
+  font-size: 1.02rem;
   line-height: 1.6;
   font-weight: 300;
 }
@@ -1596,7 +1606,7 @@ em,
 .about-note h4,
 .about-side-copy h4 {
   color: var(--dark-text);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -1606,7 +1616,7 @@ em,
 .about-side-copy p {
   margin-top: 26px;
   color: var(--dark-muted);
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.6;
   font-weight: 300;
 }
