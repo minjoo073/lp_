@@ -1252,6 +1252,7 @@ em,
 
 .ui-note--mobile h4 {
   font-size: 1.2rem;
+  margin-left: -20px;
 }
 
 .ui-note-column--right .ui-note--mobile::before,
