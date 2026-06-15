@@ -160,11 +160,10 @@ function syncFeatureListTop() {
   const row = document.querySelector('.editorial-row');
   if (!featureList || !shot || !row) return;
 
-  const rowRect = row.getBoundingClientRect();
-  const shotRect = shot.getBoundingClientRect();
-  const imageOffsetInRow = shotRect.top - rowRect.top;
-
-  featureList.style.paddingTop = imageOffsetInRow + 'px';
+  /* sticky 목록은 CSS의 top 값으로 위치를 잡으므로, 예전처럼 이미지 상단에 맞추는
+     큰 paddingTop을 넣지 않는다. 목록 전체 높이를 뷰포트 안에 유지해야 sticky가
+     '따라오는' 효과를 내기 때문에 paddingTop은 0으로 통제한다. */
+  featureList.style.paddingTop = '0px';
   featureList.style.minHeight = '';
   featureList.style.top = '';
   featureList.style.marginTop = '';
@@ -207,11 +206,12 @@ window.addEventListener('load', syncFeatureListTop);
   if (!items.length || !anchor) return;
 
   function computeAndSetup() {
-    /* 01: 이미지 상단이 뷰포트에 진입하는 순간 (CORTIS 타이틀 진입 시점)
-       05: FIVE VOICES 상단 도달 직전 (이미지 하단 53% 아직 보임)
-       범위 1200px ÷ 4 구간 = 항목당 300px 스크롤 간격 */
+    /* 등장 속도는 수정 전과 동일하게 유지(항목당 ~300px 스크롤 간격).
+       이미지가 충분히 높아 이 범위 내내 목록이 sticky로 고정되어 따라온다.
+       - 01: 이미지 상단이 뷰포트에 진입하는 순간
+       - 05: 이미지 47% 스크롤 지점 */
     const startAt = 300;
-    const endAt = -900;
+    const endAt = -1300;
 
     setupProgressiveReveal(items, anchor, startAt, endAt);
   }
