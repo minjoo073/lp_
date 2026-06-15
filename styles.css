@@ -10,7 +10,7 @@
   --dark-muted: #b7afa4;
   --dark-line: rgba(244, 241, 234, 0.14);
   --page-margin: 80px;
-  --desktop-frame: 1440px;
+  --desktop-frame: 1760px;
   --container: calc(100vw - (var(--page-margin) * 2));
 }
 
