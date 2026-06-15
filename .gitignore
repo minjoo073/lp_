@@ -1,1 +1,7 @@
 .DS_Store
+
+# 강팀(Ai_Team) 작업 도구 — 웹사이트 결과물과 분리, git 추적 제외
+.claude/
+CLAUDE.md
+scripts/
+templates/
