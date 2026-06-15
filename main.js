@@ -169,6 +169,12 @@ function syncFeatureListTop() {
   featureList.style.top = '';
   featureList.style.marginTop = '';
   featureList.style.paddingBottom = '';
+
+  /* 이 함수가 문서 높이를 바꾸므로, ScrollTrigger가 잡고 있는 trigger 위치를
+     반드시 다시 계산해야 한다. 그렇지 않으면 GSAP의 load/resize 자동 refresh가
+     이 padding 변경 '이전'에 실행돼, 아래쪽 클로징 ONVINYL pin이 어긋난
+     위치(메인 카탈로그 구간)에서 조기 발동한다. */
+  if (window.ScrollTrigger) ScrollTrigger.refresh();
 }
 
 /* 디바운스 유틸 — resize 이벤트 과다 호출 방지 */
@@ -360,40 +366,55 @@ setupProgressiveReveal(
   /* 초기 상태 */
   gsap.set(wordmark, { opacity: 1, scale: 1, y: 0, color: '#f4f1ea' });
 
-  /* Pin + scale: 짧은 범위(+=180)에서 빠르게 1 → 1.55 */
-  const scaleTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: footer,
-      start: 'top 55%',
-      end: '+=180',
-      pin: wordmark,
-      pinSpacing: true,
-      scrub: 0.8,
-    },
-  });
+  /* ★ 핵심 버그 수정 ★
+     pin은 position:fixed를 사용한다. 대용량 이미지가 로드되기 전(문서 높이가
+     짧을 때) ScrollTrigger를 만들면 trigger(footer)의 start 위치가 페이지
+     상단 쪽으로 잘못(stale) 계산된다. 그 상태에서 스크롤하면 메인 페이지
+     구간에서 pin이 발동해 워드마크가 화면 왼쪽에 고정되어 '새어나온다'.
+     → 레이아웃(이미지·폰트 포함)이 확정되는 load 이후에만 생성해
+        stale-active 구간 자체를 원천 차단한다. */
+  function buildClosingTriggers() {
+    /* Pin + scale: 확장(슬라이드) 구간을 넓혀 더 천천히 1 → 1.55 */
+    const scaleTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: footer,
+        start: 'top 55%',
+        end: '+=280',
+        pin: wordmark,
+        pinSpacing: true,
+        scrub: 0.8,
+        invalidateOnRefresh: true,
+      },
+    });
 
-  scaleTl.to(wordmark, {
-    scale: 1.55,
-    duration: 1,
-    ease: 'power1.inOut',
-  });
+    scaleTl.to(wordmark, {
+      scale: 1.55,
+      duration: 1,
+      ease: 'power1.inOut',
+    });
 
-  /* 색상 전환: 페이지 최대 스크롤(약 15827) 안에서 풀 레드 도달
-     - start: 'top 65%' — cream 한참 유지
-     - end: 'top 25%' — footer top이 뷰포트 25% 도달 시 풀 레드
-       (페이지 max scroll로 도달 가능한 범위 내)
-     - 범위 약 360px */
-  gsap.to(wordmark, {
-    color: '#d11f26',
-    ease: 'none',
-    scrollTrigger: {
-      trigger: footer,
-      start: 'top 65%',
-      end: 'top 25%',
-      scrub: 1,
-    },
-    immediateRender: false,
-  });
+    /* 색상 전환: cream → red 를 더 넓은 스크롤 구간에 걸쳐 천천히.
+       - start 'top 78%' — 더 일찍부터 서서히 시작
+       - end 'top 32%' — 페이지 최대 스크롤 안에서 풀 레드 도달(완료 보장) */
+    gsap.to(wordmark, {
+      color: '#d11f26',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: footer,
+        start: 'top 78%',
+        end: 'top 32%',
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+      immediateRender: false,
+    });
+  }
+
+  if (document.readyState === 'complete') {
+    buildClosingTriggers();
+  } else {
+    window.addEventListener('load', buildClosingTriggers, { once: true });
+  }
 })();
 
 /* ─── Effect 7: Closing copy-sub typewriter ───────────────────────────────
@@ -523,4 +544,64 @@ setupProgressiveReveal(
     start: 'top 75%',
     onEnter: startTyping,
   });
+})();
+
+/* ─── Effect 8: 모바일 목업 '흐르듯 펼쳐져 떨어지기' ───────────────────────
+   스크롤에 묶지 않고(=scrub X), 뷰포트에 들어오면 1회 자동 재생.
+   clip-path inset(bottom) 100%→0% 를 시간 기반(ease)으로 풀어, 위 → 아래로
+   흐르듯 펼쳐져 떨어지는 느낌. */
+(function initMobileUnfold() {
+  if (prefersReducedMotion) return;
+
+  const img = document.querySelector('.ui-image--mobile');
+  if (!img) return;
+
+  function build() {
+    gsap.fromTo(img,
+      { clipPath: 'inset(0% 0% 100% 0%)' },
+      {
+        clipPath: 'inset(0% 0% 0% 0%)',
+        duration: 1.6,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: img,
+          start: 'top 80%',
+          once: true,
+        },
+      }
+    );
+  }
+
+  if (document.readyState === 'complete') build();
+  else window.addEventListener('load', build, { once: true });
+})();
+
+/* ─── ScrollTrigger 위치 재보정 (asset/font 지연 로드 대응) ────────────────
+   대용량 이미지·웹폰트가 load 이후까지 레이아웃을 바꾸면 GSAP의 자동 refresh
+   타이밍과 어긋나 trigger 위치가 stale 해진다(클로징 ONVINYL pin 조기 발동 등).
+   레이아웃이 실제로 확정되는 시점마다 명시적으로 refresh 해 위치를 재계산한다.
+   ─────────────────────────────────────────────────────────────────────── */
+(function refreshScrollTriggerWhenSettled() {
+  if (prefersReducedMotion) return;
+  if (typeof ScrollTrigger === 'undefined') return;
+
+  const refresh = () => ScrollTrigger.refresh();
+
+  /* load 시점: 동기 load 핸들러(syncFeatureListTop 등)가 모두 끝난 뒤
+     한 프레임 늦춰 최종 레이아웃 기준으로 재계산 */
+  window.addEventListener('load', () => requestAnimationFrame(refresh));
+
+  /* 캐시 미스로 늦게 도착하는 이미지가 남아 있으면 마지막 1장까지 반영 */
+  const pendingImgs = Array.from(document.images).filter(img => !img.complete);
+  let remaining = pendingImgs.length;
+  pendingImgs.forEach(img => {
+    const done = () => { if (--remaining === 0) refresh(); };
+    img.addEventListener('load', done, { once: true });
+    img.addEventListener('error', done, { once: true });
+  });
+
+  /* 웹폰트 스왑으로 텍스트 높이가 바뀌는 경우까지 반영 */
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(refresh);
+  }
 })();

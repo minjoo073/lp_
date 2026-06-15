@@ -1094,6 +1094,10 @@ em,
   align-items: start;
   justify-content: center;
   margin-top: 150px;
+  /* 넓은 화면에서 카탈로그(노트+이미지) 묶음을 살짝 좁혀 가운데로 모음.
+     이미지는 늘 페이지 중앙 → 노트만 안쪽으로 들어오고 점선도 짧아진다. */
+  max-width: 1560px;
+  margin-inline: auto;
 }
 
 .ui-note-column {
@@ -1190,7 +1194,7 @@ em,
   content: "";
   position: absolute;
   top: 9px;
-  width: clamp(60px, 8vw, 130px);
+  width: clamp(100px, 18vw, 260px);
   left: calc(100% + 11px);
   border-top: 1px dotted rgba(244, 241, 234, 0.75);
 }
@@ -1214,8 +1218,8 @@ em,
 .ui-note-column--right .ui-note::before {
   content: "";
   position: absolute;
-  width: clamp(60px, 7vw, 110px);
-  left: calc(-1 * clamp(60px, 7vw, 110px) - 11px);
+  width: clamp(70px, 11vw, 160px);
+  left: calc(-1 * clamp(70px, 11vw, 160px) - 11px);
   top: 9px;
   border-top: 1px dotted rgba(244, 241, 234, 0.75);
 }
@@ -1243,6 +1247,11 @@ em,
 
 .ui-note--mobile {
   max-width: 196px;
+  margin-left: 0;
+}
+
+.ui-note--mobile h4 {
+  font-size: 1.2rem;
 }
 
 .ui-note-column--right .ui-note--mobile::before,
@@ -1290,6 +1299,7 @@ em,
   width: 200px;
   margin-top: 14px;
   margin-left: 0;
+  will-change: clip-path;
 }
 
 .editorial-row {
@@ -1484,7 +1494,7 @@ em,
   position: absolute;
   top: 16px;
   left: calc(100% + 10px);
-  width: clamp(80px, 11vw, 160px);
+  width: clamp(120px, 16vw, 300px);
   border-top: 1px dotted rgba(244, 241, 234, 0.75);
 }
 
@@ -1503,7 +1513,7 @@ em,
 .ui-detail-row .detail-note--reviews::after {
   top: 16px;
   left: calc(100% + 10px);
-  width: clamp(80px, 11vw, 160px);
+  width: clamp(120px, 16vw, 300px);
   border-top: 1px dotted rgba(244, 241, 234, 0.75);
 }
 
@@ -1576,6 +1586,13 @@ em,
   position: relative;
 }
 
+/* 좌측 About 노트 텍스트만 오른쪽으로 30px 이동.
+   padding-left를 쓰므로 노트의 border-box 우측 끝(=점/점선 시작점)은
+   그대로 유지되어 커넥터 라인 위치에는 영향이 없다. */
+.about-note {
+  padding-left: 50px;
+}
+
 .about-note h4,
 .about-side-copy h4 {
   color: var(--dark-text);
@@ -1594,19 +1611,28 @@ em,
   font-weight: 300;
 }
 
-.about-note::after {
+/* 커넥터(원 + 점선)를 노트 전체가 아니라 '타이틀(h4)'에 붙여
+   타이틀의 세로 중앙에 정렬한다. top:50% + translateY(-50%)로
+   글자 크기와 무관하게 항상 타이틀 중앙선과 일치. */
+.about-note h4 {
+  position: relative;
+}
+
+.about-note h4::after {
   content: "";
   position: absolute;
-  top: 16px;
+  top: 50%;
+  transform: translateY(-50%);
   left: calc(100% + 10px);
-  width: clamp(35px, 5vw, 80px);
+  width: clamp(70px, 12vw, 220px);
   border-top: 1px dotted rgba(244, 241, 234, 0.75);
 }
 
-.about-note::before {
+.about-note h4::before {
   content: "";
   position: absolute;
-  top: 12px;
+  top: 50%;
+  transform: translateY(-50%);
   left: calc(100% + 2px);
   width: 7px;
   height: 7px;
@@ -1617,14 +1643,15 @@ em,
 .about-side-copy {
   padding-top: 218px;
   padding-left: 0;
+  margin-left: 10px;
 }
 
 .about-side-copy::after {
   content: "";
   position: absolute;
   top: calc(218px + 16px);
-  width: clamp(55px, 6vw, 95px);
-  left: calc(-1 * clamp(55px, 6vw, 95px) - 11px);
+  width: clamp(70px, 12vw, 220px);
+  left: calc(-1 * clamp(70px, 12vw, 220px) - 11px);
   border-top: 1px dotted rgba(244, 241, 234, 0.75);
 }
 
@@ -1757,7 +1784,7 @@ em,
 
 .code-label {
   color: var(--dark-text);
-  font-size: 0.92rem;
+  font-size: 1.02rem;
   font-weight: 400;
   letter-spacing: 0;
 }
@@ -1769,16 +1796,16 @@ em,
 .code-comment {
   margin: 0 0 12px;
   color: #7f7a75;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 1.02rem;
+  line-height: 1.45;
 }
 
 .publishing-code pre {
   margin: 0 0 34px;
   color: #f0c48a;
   font-family: "Space Mono", ui-monospace, monospace;
-  font-size: 0.96rem;
-  line-height: 1.55;
+  font-size: 1.12rem;
+  line-height: 1.6;
   white-space: pre-wrap;
 }
 
@@ -1955,7 +1982,8 @@ em,
 
   .ui-note-column--left .ui-note,
   .ui-note-column--right .ui-note,
-  .ui-detail-row .detail-note {
+  .ui-detail-row .detail-note,
+  .about-note {
     max-width: 100%;
     padding-left: 0;
   }
