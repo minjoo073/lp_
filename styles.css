@@ -68,6 +68,7 @@ ol {
   padding-top: 12px;
   padding-bottom: 120px;
   position: relative;
+  overflow-x: clip; /* 삐져나간 장식 레코드만 잘라 가로 스크롤 제거 (걸침 디자인은 유지, 스크롤 컨테이너 안 만듦) */
 }
 
 /* hero 상하단 텍스트는 LP보다 위 layer로 보장 */
