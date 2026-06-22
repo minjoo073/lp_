@@ -29,6 +29,7 @@ body {
   font-family: "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 400;
   line-height: 1.5;
+  overflow-x: clip; /* 전 섹션의 삐져나간 장식 + 100vw 스크롤바 폭만 잘라 가로 스크롤 제거 (clip=스크롤 컨테이너 안 만듦, sticky 안전) */
 }
 
 p,
